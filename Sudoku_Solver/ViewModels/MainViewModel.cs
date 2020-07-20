@@ -157,14 +157,14 @@ namespace Sudoku_Solver.ViewModels
 
                             possibilityCount++;                     
                             break;
-                        } else if(possibilityCount >= 9 && restarts < 10000)
+                        } else if(possibilityCount >= 9 && restarts < 100)
                         {
                             //Try again
                             TheBoard = new ObservableDictionary<string, int?>(originalBoardState);
                             restarts++;
                             break;
                         }                    
-                        else if (restarts >= 10000) //Give up
+                        else if (restarts >= 100) //Give up
                         {
                             MessageBox.Show("Couldn't solve", "Couldn't solve", MessageBoxButton.OK, MessageBoxImage.Error);
                             solved = true;
